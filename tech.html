@@ -1,100 +1,261 @@
 <!DOCTYPE html>
 <html lang="zh">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>技术交流</title>
-  <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&display=swap" rel="stylesheet">
-  <style>
-    .tech-container {
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 2rem;
-    }
-    .blog-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-      margin-top: 2rem;
-    }
-    .blog-card {
-      background: rgba(255, 255, 255, 0.1);
-      border-radius: 1rem;
-      padding: 1.5rem;
-      transition: all 0.3s ease;
-    }
-    .blog-card:hover {
-      transform: translateY(-5px);
-      background: rgba(255, 255, 255, 0.2);
-    }
-    .blog-card h3 {
-      margin-bottom: 1rem;
-      color: #333;
-    }
-    .blog-card p {
-      color: #666;
-      margin-bottom: 1rem;
-    }
-    .tag {
-      display: inline-block;
-      padding: 0.3rem 0.8rem;
-      background: rgba(130, 130, 255, 0.1);
-      border-radius: 1rem;
-      margin-right: 0.5rem;
-      font-size: 0.9em;
-    }
-    .back-button {
-      position: fixed;
-      top: 2rem;
-      left: 2rem;
-      padding: 0.8rem 1.5rem;
-      background: rgba(255, 255, 255, 0.1);
-      border-radius: 2rem;
-      text-decoration: none;
-      color: #333;
-      transition: all 0.3s ease;
-    }
-    .back-button:hover {
-      background: rgba(255, 255, 255, 0.2);
-      transform: translateX(-5px);
-    }
-  </style>
-</head>
-<body>
-  <div class="rotating-bg"></div>
-  <a href="index.html" class="back-button">← 返回首页</a>
-  
-  <div class="tech-container">
-    <div class="section">
-      <div class="section-content">
-        <h1>💡 技术交流</h1>
-        <p>分享技术心得，探讨开发经验</p>
-        
-        <div class="blog-grid">
-          <div class="blog-card">
-            <h3>现代前端开发实践</h3>
-            <p>探讨React Hooks的最佳实践和性能优化技巧</p>
-            <span class="tag">React</span>
-            <span class="tag">性能优化</span>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>技术交流</title>
+    <link rel="stylesheet" href="styles/style.css" />
+    <link rel="stylesheet" href="styles/tech-page.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="tech-page">
+    <div class="rotating-bg"></div>
+    <a href="index.html" class="tech-back">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="19" y1="12" x2="5" y2="12"></line>
+        <polyline points="12 19 5 12 12 5"></polyline>
+      </svg>
+      返回首页
+    </a>
+
+    <div class="tech-container">
+      <header class="tech-header">
+        <h1 class="tech-header__title">
+          <svg class="tech-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="url(#grad1)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M2 17L12 22L22 17" stroke="url(#grad1)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M2 12L12 17L22 12" stroke="url(#grad1)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <defs>
+              <linearGradient id="grad1" x1="2" y1="2" x2="22" y2="22" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#2563eb"/>
+                <stop offset="100%" stop-color="#7c3aed"/>
+              </linearGradient>
+            </defs>
+          </svg>
+          技术交流
+        </h1>
+        <p class="tech-header__description">分享技术心得，探讨开发经验，一起在技术的海洋中探索</p>
+      </header>
+
+      <nav class="tech-nav">
+        <button class="tech-nav__item active" data-filter="all">全部</button>
+        <button class="tech-nav__item" data-filter="frontend">前端开发</button>
+        <button class="tech-nav__item" data-filter="backend">后端开发</button>
+        <button class="tech-nav__item" data-filter="language">编程语言</button>
+        <button class="tech-nav__item" data-filter="devops">DevOps</button>
+        <button class="tech-nav__item" data-filter="database">数据库</button>
+      </nav>
+
+      <div class="tech-grid">
+        <!-- 前端开发 -->
+        <article class="tech-card" data-category="frontend">
+          <h3 class="tech-card__title">React全栈开发</h3>
+          <p class="tech-card__description">React 18新特性、Hooks最佳实践、状态管理、性能优化、SSR与SSG实践。</p>
+          <div class="tech-card__tags">
+            <span class="tech-tag">React</span>
+            <span class="tech-tag">TypeScript</span>
+            <span class="tech-tag">Next.js</span>
           </div>
-          
-          <div class="blog-card">
-            <h3>微服务架构设计</h3>
-            <p>从单体应用到微服务的演进之路</p>
-            <span class="tag">架构</span>
-            <span class="tag">微服务</span>
+        </article>
+
+        <article class="tech-card" data-category="frontend">
+          <h3 class="tech-card__title">Vue.js企业实践</h3>
+          <p class="tech-card__description">Vue3组合式API、Pinia状态管理、性能优化、Nuxt.js服务端渲染。</p>
+          <div class="tech-card__tags">
+            <span class="tech-tag">Vue.js</span>
+            <span class="tech-tag">TypeScript</span>
+            <span class="tech-tag">Nuxt</span>
           </div>
-          
-          <div class="blog-card">
-            <h3>容器化部署实战</h3>
-            <p>Docker和Kubernetes在实际项目中的应用</p>
-            <span class="tag">Docker</span>
-            <span class="tag">K8s</span>
+        </article>
+
+        <article class="tech-card" data-category="frontend">
+          <h3 class="tech-card__title">Angular企业应用</h3>
+          <p class="tech-card__description">Angular最新特性、RxJS响应式编程、NgRx状态管理、微前端架构。</p>
+          <div class="tech-card__tags">
+            <span class="tech-tag">Angular</span>
+            <span class="tech-tag">TypeScript</span>
+            <span class="tech-tag">RxJS</span>
           </div>
-        </div>
+        </article>
+
+        <!-- 编程语言 -->
+        <article class="tech-card" data-category="language">
+          <h3 class="tech-card__title">TypeScript进阶</h3>
+          <p class="tech-card__description">类型系统深入、高级类型编程、装饰器模式、编译原理解析。</p>
+          <div class="tech-card__tags">
+            <span class="tech-tag">TypeScript</span>
+            <span class="tech-tag">JavaScript</span>
+            <span class="tech-tag">编译原理</span>
+          </div>
+        </article>
+
+        <article class="tech-card" data-category="language">
+          <h3 class="tech-card__title">Rust系统编程</h3>
+          <p class="tech-card__description">所有权系统、并发编程、unsafe Rust、FFI开发实践。</p>
+          <div class="tech-card__tags">
+            <span class="tech-tag">Rust</span>
+            <span class="tech-tag">系统编程</span>
+            <span class="tech-tag">并发</span>
+          </div>
+        </article>
+
+        <article class="tech-card" data-category="language">
+          <h3 class="tech-card__title">Go高性能编程</h3>
+          <p class="tech-card__description">协程调度、内存管理、并发模式、性能优化实践。</p>
+          <div class="tech-card__tags">
+            <span class="tech-tag">Go</span>
+            <span class="tech-tag">并发</span>
+            <span class="tech-tag">性能</span>
+          </div>
+        </article>
+
+        <!-- 后端开发 -->
+        <article class="tech-card" data-category="backend">
+          <h3 class="tech-card__title">Node.js微服务</h3>
+          <p class="tech-card__description">Express/Nest.js框架、微服务架构、GraphQL API设计。</p>
+          <div class="tech-card__tags">
+            <span class="tech-tag">Node.js</span>
+            <span class="tech-tag">Nest.js</span>
+            <span class="tech-tag">GraphQL</span>
+          </div>
+        </article>
+
+        <article class="tech-card" data-category="backend">
+          <h3 class="tech-card__title">Spring Cloud实战</h3>
+          <p class="tech-card__description">微服务架构、服务治理、配置中心、分布式事务。</p>
+          <div class="tech-card__tags">
+            <span class="tech-tag">Java</span>
+            <span class="tech-tag">Spring</span>
+            <span class="tech-tag">微服务</span>
+          </div>
+        </article>
+
+        <article class="tech-card" data-category="backend">
+          <h3 class="tech-card__title">Django REST框架</h3>
+          <p class="tech-card__description">RESTful API设计、认证授权、异步任务、性能优化。</p>
+          <div class="tech-card__tags">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">Django</span>
+            <span class="tech-tag">REST</span>
+          </div>
+        </article>
+
+        <!-- DevOps -->
+        <article class="tech-card" data-category="devops">
+          <h3 class="tech-card__title">Kubernetes集群管理</h3>
+          <p class="tech-card__description">容器编排、服务网格、监控告警、集群运维实践。</p>
+          <div class="tech-card__tags">
+            <span class="tech-tag">K8s</span>
+            <span class="tech-tag">Istio</span>
+            <span class="tech-tag">DevOps</span>
+          </div>
+        </article>
+
+        <article class="tech-card" data-category="devops">
+          <h3 class="tech-card__title">Linux系统运维</h3>
+          <p class="tech-card__description">系统调优、Shell脚本、安全加固、性能监控。</p>
+          <div class="tech-card__tags">
+            <span class="tech-tag">Linux</span>
+            <span class="tech-tag">Shell</span>
+            <span class="tech-tag">运维</span>
+          </div>
+        </article>
+
+        <article class="tech-card" data-category="devops">
+          <h3 class="tech-card__title">Web服务器优化</h3>
+          <p class="tech-card__description">Nginx/Apache配置、负载均衡、缓存策略、安全防护。</p>
+          <div class="tech-card__tags">
+            <span class="tech-tag">Nginx</span>
+            <span class="tech-tag">Apache</span>
+            <span class="tech-tag">运维</span>
+          </div>
+        </article>
+
+        <!-- 数据库 -->
+        <article class="tech-card" data-category="database">
+          <h3 class="tech-card__title">MySQL性能优化</h3>
+          <p class="tech-card__description">索引优化、查询优化、分库分表、主从复制。</p>
+          <div class="tech-card__tags">
+            <span class="tech-tag">MySQL</span>
+            <span class="tech-tag">性能优化</span>
+            <span class="tech-tag">运维</span>
+          </div>
+        </article>
+
+        <article class="tech-card" data-category="database">
+          <h3 class="tech-card__title">PostgreSQL高级特性</h3>
+          <p class="tech-card__description">JSON处理、全文搜索、地理信息、性能调优。</p>
+          <div class="tech-card__tags">
+            <span class="tech-tag">PostgreSQL</span>
+            <span class="tech-tag">数据库</span>
+            <span class="tech-tag">GIS</span>
+          </div>
+        </article>
+
+        <article class="tech-card" data-category="database">
+          <h3 class="tech-card__title">Redis缓存设计</h3>
+          <p class="tech-card__description">缓存策略、集群部署、持久化、性能优化。</p>
+          <div class="tech-card__tags">
+            <span class="tech-tag">Redis</span>
+            <span class="tech-tag">缓存</span>
+            <span class="tech-tag">NoSQL</span>
+          </div>
+        </article>
       </div>
+
+      <section class="tech-comments">
+        <h2 class="tech-comments__title">💬 评论区</h2>
+        <div class="tech-comments__container giscus"></div>
+      </section>
     </div>
-  </div>
-</body>
-</html> 
+
+    <!-- Giscus评论区 -->
+    <script
+      src="https://giscus.app/client.js"
+      data-repo="xixiwenxuanhe/blog-comments"
+      data-repo-id="R_kgDOOS4Wtg"
+      data-category="Announcements"
+      data-category-id="DIC_kwDOOS4Wts4Cotby"
+      data-mapping="pathname"
+      data-strict="0"
+      data-reactions-enabled="1"
+      data-emit-metadata="0"
+      data-input-position="bottom"
+      data-theme="preferred_color_scheme"
+      data-lang="zh-CN"
+      crossorigin="anonymous"
+      async
+    ></script>
+
+    <!-- 分类筛选脚本 -->
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const navItems = document.querySelectorAll('.tech-nav__item');
+        const cards = document.querySelectorAll('.tech-card');
+
+        navItems.forEach(item => {
+          item.addEventListener('click', () => {
+            // 更新激活状态
+            navItems.forEach(nav => nav.classList.remove('active'));
+            item.classList.add('active');
+
+            // 筛选卡片
+            const filter = item.dataset.filter;
+            cards.forEach(card => {
+              if (filter === 'all' || card.dataset.category === filter) {
+                card.style.display = '';
+                setTimeout(() => card.style.opacity = '1', 0);
+              } else {
+                card.style.opacity = '0';
+                setTimeout(() => card.style.display = 'none', 300);
+              }
+            });
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

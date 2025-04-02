@@ -4,94 +4,131 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>联系我</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="styles/style.css" />
+  <link rel="stylesheet" href="styles/tech-page.css" />
+  <link rel="stylesheet" href="styles/contact-page.css" />
   <link href="https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&display=swap" rel="stylesheet">
-  <style>
-    .contact-container {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 2rem;
-    }
-    .contact-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
-      margin-top: 2rem;
-    }
-    .contact-card {
-      background: rgba(255, 255, 255, 0.1);
-      border-radius: 1rem;
-      padding: 2rem;
-      text-align: center;
-      transition: all 0.3s ease;
-      cursor: pointer;
-    }
-    .contact-card:hover {
-      transform: translateY(-5px);
-      background: rgba(255, 255, 255, 0.2);
-    }
-    .contact-icon {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-    }
-    .contact-info {
-      margin-top: 1rem;
-      color: #666;
-    }
-    .back-button {
-      position: fixed;
-      top: 2rem;
-      left: 2rem;
-      padding: 0.8rem 1.5rem;
-      background: rgba(255, 255, 255, 0.1);
-      border-radius: 2rem;
-      text-decoration: none;
-      color: #333;
-      transition: all 0.3s ease;
-    }
-    .back-button:hover {
-      background: rgba(255, 255, 255, 0.2);
-      transform: translateX(-5px);
-    }
-  </style>
 </head>
-<body>
+<body class="tech-page">
   <div class="rotating-bg"></div>
-  <a href="index.html" class="back-button">← 返回首页</a>
+  <a href="index.html" class="tech-back">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="19" y1="12" x2="5" y2="12"></line>
+      <polyline points="12 19 5 12 12 5"></polyline>
+    </svg>
+    返回首页
+  </a>
   
   <div class="contact-container">
-    <div class="section">
-      <div class="section-content">
-        <h1>🤝 联系我</h1>
-        <p>随时欢迎与我交流，期待您的消息！</p>
-        
-        <div class="contact-grid">
-          <div class="contact-card">
-            <div class="contact-icon">📧</div>
-            <h3>电子邮件</h3>
-            <div class="contact-info">example@email.com</div>
-          </div>
-          
-          <div class="contact-card">
-            <div class="contact-icon">💬</div>
-            <h3>微信</h3>
-            <div class="contact-info">WeChat_ID</div>
-          </div>
-          
-          <div class="contact-card">
-            <div class="contact-icon">🐱</div>
-            <h3>GitHub</h3>
-            <div class="contact-info">github.com/yourusername</div>
-          </div>
-          
-          <div class="contact-card">
-            <div class="contact-icon">📝</div>
-            <h3>博客</h3>
-            <div class="contact-info">blog.example.com</div>
-          </div>
+    <header class="contact-header">
+      <h1 class="contact-header__title">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+          <circle cx="9" cy="7" r="4"></circle>
+          <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+          <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+        </svg>
+        联系我
+      </h1>
+      <p class="contact-header__description">在思想的碰撞中，我们找到理解、共鸣与希望。</p>
+    </header>
+    
+    <div class="contact-list">
+
+      <a href="https://www.cqu.edu.cn/" target="_blank" class="contact-button">
+        <svg class="contact-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+          <path d="M21,161c81.6-44.17,147.51-73.99,233.82-120L491,161h-50H71H21z" fill="#EFF3F6"/>
+          <path d="M257.486,51.333L473.328,161H491L254.82,41C168.51,87.01,102.6,116.83,21,161h21.961 C115.935,122.297,178.082,93.662,257.486,51.333z" fill="#DEE0E0"/>
+          <path d="M441,206H70.45c-1.338,0-2.62-0.536-3.56-1.489c-0.94-0.953-1.458-2.242-1.44-3.58l0.55-40 c0.038-2.738,2.269-4.931,4.998-4.931c0.023,0,0.047,0,0.07,0c2.761,0.038,4.969,2.307,4.931,5.068L75.52,196H436v-35 c0-2.761,2.238-5,5-5s5,2.239,5,5v40C446,203.761,443.762,206,441,206z" fill="#1B4B87"/>
+          <path d="M451,431v40H61v-40h30.56h328.88z M420.44,391v40H91.56v-40H111h50h70h50h70h50z" fill="#1B4B87"/>
+          <path d="M401,256v135h-50V256c0-13.81,11.19-25,25-25c6.9,0,13.16,2.8,17.68,7.32 C398.2,242.84,401,249.1,401,256z" fill="#1B4B87"/>
+          <path d="M281,256v135h-50V256c0-13.81,11.19-25,25-25c6.9,0,13.16,2.8,17.68,7.32 C278.2,242.84,281,249.1,281,256z" fill="#1B4B87"/>
+          <path d="M161,256v135h-50V256c0-13.81,11.19-25,25-25c6.9,0,13.16,2.8,17.68,7.32S161,249.1,161,256z" fill="#1B4B87"/>
+        </svg>
+        <div class="contact-info">
+          就读院校
+          <div class="contact-value">重庆大学  重庆市沙坪坝区沙正街174号  邮编：400044</div>
+        </div>
+      </a>
+
+      <a href="mailto:xixiwenxuanhe@gmail.com" class="contact-button">
+        <svg class="contact-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#4285F4">
+          <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+        </svg>
+        <div class="contact-info">
+          谷歌邮箱
+          <div class="contact-value">xixiwenxuanhe@gmail.com</div>
+        </div>
+      </a>
+
+      <div class="contact-button" id="wechat-btn">
+        <svg class="contact-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+          <rect class="cls-1" height="64" rx="11.2" ry="11.2" width="64" fill="#00d332"/>
+          <path class="cls-2" d="M24.9,11.29c-10.21,0-18.49,6.9-18.49,15.41A14.53,14.53,0,0,0,13,38.49l-.67,4.88a.4.4,0,0,0,.56.42l5.88-2.55a14.46,14.46,0,0,0,6.91.86,12.14,12.14,0,0,1-.54-3.51c0-7.88,7.64-14.29,17-14.29.34,0,.68,0,1,0C41.81,17,34.15,11.29,24.9,11.29Zm-6.57,13a2.4,2.4,0,1,1,2.4-2.4A2.4,2.4,0,0,1,18.33,24.28Zm12.63,0a2.4,2.4,0,1,1,2.4-2.4A2.41,2.41,0,0,1,31,24.28Z" fill="#fff"/>
+          <path class="cls-2" d="M57.59,38.59c0-7-6.91-12.69-15.43-12.69S26.73,31.58,26.73,38.59s6.91,12.69,15.43,12.69a18.34,18.34,0,0,0,5.56-.87l4.09,2.25a.4.4,0,0,0,.59-.39L52,48.35A11.94,11.94,0,0,0,57.59,38.59ZM37,36.08a1.8,1.8,0,1,1,1.8-1.8A1.8,1.8,0,0,1,37,36.08Zm10.41,0a1.8,1.8,0,1,1,1.8-1.8A1.8,1.8,0,0,1,47.44,36.08Z" fill="#fff"/>
+        </svg>
+        <div class="contact-info">
+          微信
+          <div class="contact-value">Dev_He</div>
         </div>
       </div>
+
+      <div class="contact-button">
+        <svg class="contact-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+          <rect width="512" height="512" rx="15%" fill="#fff"/>
+          <path fill="#ffc107" d="M261 398a57 32 0 0 0 114 0 57 32 0 0 0-114 0zm-124 0a57 32 0 0 0 114 0 57 32 0 0 0-114 0z"/>
+          <path fill="#37474f" d="M238 149a10 14 0 0 1-20 0 10 14 0 0 1 20 0zm46-13c-6 0-10 6-10 13 0 8 4-4 10-4 5 0 9 12 9 4 0-7-4-13-9-13zm27 14a23 33 0 0 1-46 0 23 33 0 0 1 46 0zm-64 0a23 33 0 0 1-46 0 23 33 0 0 1 46 0zm127 79v-56a119 119 0 0 0-237 0v56c-18 25-35 55-37 78 0 44 13 40 13 40 5 0 15-9 23-20 19 55 65 93 120 93s101-38 120-93c8 11 18 20 23 20 0 0 13 4 13-40 0-23-17-54-37-78z"/>
+          <path fill="#ffc107" d="M183 204a73 13 0 1 1 146 0 73 23 0 1 1-146 0z"/>
+          <path fill="#eceff1" d="M171 237a88 132 0 1 0 170 0z"/>
+          <path fill="#ff3d00" d="M391 220c-4-14-9-20-19-12a235 225 0 0 1-230 0c-10-7-15-2-19 12s-6 18 6 26l32 15c-6 32-5 63-5 65 1 13 12 12 27 12 14-1 26 0 26-15 0-8 0-27 3-46 15 3 29 5 46 5 67 0 126-35 127-36 11-7 9-11 6-26z"/>
+        </svg>
+        <div class="contact-info">
+          QQ
+          <div class="contact-value">2212266755</div>
+        </div>
+      </div>
+
+      <a href="https://github.com/xixiwenxuanhe" target="_blank" class="contact-button">
+        <svg class="contact-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#333">
+          <path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.17 6.839 9.49.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.604-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.167 22 16.418 22 12c0-5.523-4.477-10-10-10z"/>
+        </svg>
+        <div class="contact-info">
+          GitHub
+          <div class="contact-value">@xixiwenxuanhe</div>
+        </div>
+      </a>
+
+      <a href="https://blog.csdn.net/2301_79694635" target="_blank" class="contact-button">
+        <svg class="contact-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#CF000D">
+          <path d="M18 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2zm-6 16H8v-2h4v2zm6-4H8v-2h10v2zm0-4H8V8h10v2z"/>
+        </svg>
+        <div class="contact-info">
+          CSDN博客
+          <div class="contact-value">@2301_79694635</div>
+        </div>
+      </a>
     </div>
   </div>
+
+  <div class="wechat-modal" id="wechat-modal">
+    <div class="wechat-qr">
+      <img src="resources/img/WeChat.jpg" alt="微信二维码">
+    </div>
+  </div>
+
+  <script>
+    const wechatBtn = document.getElementById('wechat-btn');
+    const wechatModal = document.getElementById('wechat-modal');
+
+    wechatBtn.addEventListener('click', () => {
+      wechatModal.classList.add('active');
+    });
+
+    wechatModal.addEventListener('click', (e) => {
+      if (e.target === wechatModal) {
+        wechatModal.classList.remove('active');
+      }
+    });
+  </script>
 </body>
 </html> 
