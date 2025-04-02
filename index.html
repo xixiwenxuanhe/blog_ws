@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>欢迎来到我的主页</title>
+
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="rotating-bg"></div>
+  <div class="container">
+    <!-- 左侧欢迎区域 -->
+    <div class="section left-section">
+      <div class="section-bg" id="bg-left"></div>
+      <div class="section-content">
+        <h1>👨‍💻 全栈开发工程师</h1>
+        <h2><span id="typed-text"></span><span class="cursor">|</span></h2>
+      </div>
+    </div>
+
+    <div class="right-container">
+      <!-- 右上交流讨论区域 -->
+      <div class="section top-right-section">
+        <div class="section-bg" id="bg-top-right"></div>
+        <div class="section-content small">
+          <h2>💡 技术交流</h2>
+        </div>
+      </div>
+
+      <!-- 右下联系区域 -->
+      <div class="section bottom-right-section">
+        <div class="section-bg" id="bg-bottom-right"></div>
+        <div class="section-content small">
+          <h2>🤝 联系我</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Live2D 模型 -->
+  <canvas id="live2d" class="live2d" width="200" height="300"></canvas>
+
+  <!-- 背景初始化 -->
+  <script type="module" src="./scripts/js/init-home-background.js"></script>
+
+  <!-- Live2D -->
+  <script src="./scripts/js/live2d.js"></script>
+  <script src="./scripts/js/LAppDefine.js"></script>
+  <style>
+    .live2d {
+      position: fixed;
+      bottom: 0;
+      right: 0;
+      z-index: 999;
+      pointer-events: auto;
+    }
+  </style>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // 确保在DOM加载完成后再初始化Live2D
+      if(typeof loadlive2d === 'function') {
+        loadlive2d("live2d", "./scripts/model/xiaomai/xiaomai.model.json");
+      } else {
+        console.error('Live2D 加载失败');
+      }
+    });
+  </script>
+
+  <!-- 打字机效果 -->
+  <script src="./scripts/js/typed.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const element = document.getElementById("typed-text");
+      const texts = [
+        '从前端到后端，构建极致用户体验！',
+        '用技术创造无限可能！',
+        '高效、优雅、稳定的全栈解决方案！'
+      ];
+      
+      const typeWriter = new TypeWriter(element, texts, {
+        typeSpeed: 160,
+        deleteSpeed: 40,
+        delayBeforeDelete: 1200,
+        delayBeforeNext: 500
+      });
+      
+      typeWriter.start();
+    });
+  </script>
+</body>
+</html>
