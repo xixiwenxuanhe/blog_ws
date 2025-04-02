@@ -1,6 +1,6 @@
-import { AbstractShapeBg } from '../jsm/AbstractShapeBg.module.js';
-import { WavyWavesBg } from '../jsm/WavyWavesBg.module.js';
-import { RandomCubesBg } from '../jsm/RandomCubesBg.module.js';
+import { AbstractShapeBg } from '../../jsm/AbstractShapeBg.module.js';
+import { WavyWavesBg } from '../../jsm/WavyWavesBg.module.js';
+import { RandomCubesBg } from '../../jsm/RandomCubesBg.module.js';
 
 // 左侧区域：梦幻紫色系渐变
 new AbstractShapeBg({

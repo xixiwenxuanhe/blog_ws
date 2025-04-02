@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>联系我</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&display=swap" rel="stylesheet">
+  <style>
+    .contact-container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    .contact-card {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 1rem;
+      padding: 2rem;
+      text-align: center;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+    .contact-card:hover {
+      transform: translateY(-5px);
+      background: rgba(255, 255, 255, 0.2);
+    }
+    .contact-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    .contact-info {
+      margin-top: 1rem;
+      color: #666;
+    }
+    .back-button {
+      position: fixed;
+      top: 2rem;
+      left: 2rem;
+      padding: 0.8rem 1.5rem;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 2rem;
+      text-decoration: none;
+      color: #333;
+      transition: all 0.3s ease;
+    }
+    .back-button:hover {
+      background: rgba(255, 255, 255, 0.2);
+      transform: translateX(-5px);
+    }
+  </style>
+</head>
+<body>
+  <div class="rotating-bg"></div>
+  <a href="index.html" class="back-button">← 返回首页</a>
+  
+  <div class="contact-container">
+    <div class="section">
+      <div class="section-content">
+        <h1>🤝 联系我</h1>
+        <p>随时欢迎与我交流，期待您的消息！</p>
+        
+        <div class="contact-grid">
+          <div class="contact-card">
+            <div class="contact-icon">📧</div>
+            <h3>电子邮件</h3>
+            <div class="contact-info">example@email.com</div>
+          </div>
+          
+          <div class="contact-card">
+            <div class="contact-icon">💬</div>
+            <h3>微信</h3>
+            <div class="contact-info">WeChat_ID</div>
+          </div>
+          
+          <div class="contact-card">
+            <div class="contact-icon">🐱</div>
+            <h3>GitHub</h3>
+            <div class="contact-info">github.com/yourusername</div>
+          </div>
+          
+          <div class="contact-card">
+            <div class="contact-icon">📝</div>
+            <h3>博客</h3>
+            <div class="contact-info">blog.example.com</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html> 

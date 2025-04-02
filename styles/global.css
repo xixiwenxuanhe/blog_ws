@@ -1,0 +1,107 @@
+/* 重置所有元素的默认样式 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 设置页面的基础布局和样式 */
+body {
+  /* 使用中文字体 ZCOOL KuaiLe */
+  font-family: "ZCOOL KuaiLe", cursive;
+  /* 设置渐变背景色 */
+  background: linear-gradient(135deg, #f5f7ff 0%, #e8f3ff 100%);
+  /* 使页面占满视口 */
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+  /* 居中内容 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  /* 防止滚动条出现 */
+  overflow: hidden;
+}
+
+/* 添加横纵网格纹理效果 */
+body::before {
+  content: '';
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 200vmax;
+  height: 200vmax;
+  transform: translate(-50%, -50%);
+  background-image: 
+    /* 横向线 */
+    linear-gradient(to right, rgba(59, 130, 246, 0.3) 1px, transparent 1px),
+    /* 纵向线 */
+    linear-gradient(to bottom, rgba(59, 130, 246, 0.3) 1px, transparent 1px);
+  background-size: 
+    50px 50px,    /* 横向线网格大小 */
+    50px 50px;    /* 纵向线网格大小 */
+  background-position: 0 0, 0 0;
+  pointer-events: none;
+  z-index: 1;
+  animation: rotateGridClockwise 180s linear infinite;
+  transform-origin: center center;
+}
+
+/* 添加斜线纹理效果 */
+body::after {
+  content: '';
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 200vmax;
+  height: 200vmax;
+  transform: translate(-50%, -50%);
+  background-image: 
+    /* 45度斜线 */
+    linear-gradient(45deg, 
+      transparent 49.5%, 
+      rgba(236, 72, 153, 0.35) 49.5%, 
+      rgba(236, 72, 153, 0.35) 50.5%, 
+      transparent 50.5%),
+    /* -45度斜线 */
+    linear-gradient(-45deg, 
+      transparent 49.5%, 
+      rgba(236, 72, 153, 0.35) 49.5%, 
+      rgba(236, 72, 153, 0.35) 50.5%, 
+      transparent 50.5%);
+  background-size: 
+    120px 120px,  /* 45度斜线大小 */
+    120px 120px;  /* -45度斜线大小 */
+  background-position: 0 0, 0 0;
+  pointer-events: none;
+  z-index: 1;
+  animation: rotateGridCounterClockwise 180s linear infinite;
+  transform-origin: center center;
+}
+
+/* 添加顺时针旋转动画 */
+@keyframes rotateGridClockwise {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+/* 添加逆时针旋转动画 */
+@keyframes rotateGridCounterClockwise {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(-360deg);
+  }
+}
+
+/* 确保内容在纹理之上 */
+.container {
+  position: relative;
+  z-index: 2;
+}
