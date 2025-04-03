@@ -43,3 +43,69 @@
   justify-content: center;
   align-items: center;
 }
+
+/* 移动端响应式布局 */
+@media screen and (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    height: auto;
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .left-section {
+    height: 40vh;
+    min-height: 300px;
+  }
+
+  .right-container {
+    width: 100%;
+    height: auto;
+  }
+
+  .top-right-section,
+  .bottom-right-section {
+    height: 25vh;
+    min-height: 200px;
+  }
+
+  .section-content h1 {
+    font-size: 1.8em;
+  }
+
+  .section-content h2 {
+    font-size: 1.4em;
+  }
+
+  .section-content p {
+    font-size: 1em;
+  }
+}
+
+/* 小屏幕设备的优化 */
+@media screen and (max-width: 480px) {
+  .container {
+    width: 100%;
+    padding: 0.8rem;
+    gap: 0.8rem;
+    border-radius: 1.5rem;
+  }
+
+  .section {
+    border-radius: 1.2rem;
+  }
+
+  .section-content {
+    padding: 1.5em;
+  }
+
+  .section-content h1 {
+    font-size: 1.6em;
+    margin-bottom: 0.6em;
+  }
+
+  .section-content h2 {
+    font-size: 1.2em;
+    margin-bottom: 0.8em;
+  }
+}

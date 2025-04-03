@@ -9,5 +9,5 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         super().__init__(*args, directory=DIRECTORY, **kwargs)
 
 with socketserver.TCPServer(("", PORT), Handler) as httpd:
-    print(f"Server running at 170.106.178.114:{PORT}")
+    print(f"Server running at localhost:{PORT}")
     httpd.serve_forever() 

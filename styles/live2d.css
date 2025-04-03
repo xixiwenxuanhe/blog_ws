@@ -5,3 +5,18 @@
     z-index: 999;
     pointer-events: auto;
 }
+
+/* 移动端适配 */
+@media screen and (max-width: 768px) {
+    .live2d {
+        bottom: 5px;
+        right: 5px;
+        transform: scale(0.8); /* 缩小模型尺寸 */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .live2d {
+        transform: scale(0.6); /* 在小屏幕上进一步缩小 */
+    }
+}

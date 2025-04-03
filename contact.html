@@ -73,7 +73,7 @@
         </div>
       </div>
 
-      <div class="contact-button">
+      <div class="contact-button" id="qq-btn">
         <svg class="contact-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
           <rect width="512" height="512" rx="15%" fill="#fff"/>
           <path fill="#ffc107" d="M261 398a57 32 0 0 0 114 0 57 32 0 0 0-114 0zm-124 0a57 32 0 0 0 114 0 57 32 0 0 0-114 0z"/>
@@ -116,9 +116,17 @@
     </div>
   </div>
 
+  <div class="wechat-modal" id="qq-modal">
+    <div class="wechat-qr">
+      <img src="resources/img/QQ.png" alt="QQ二维码">
+    </div>
+  </div>
+
   <script>
     const wechatBtn = document.getElementById('wechat-btn');
     const wechatModal = document.getElementById('wechat-modal');
+    const qqBtn = document.getElementById('qq-btn');
+    const qqModal = document.getElementById('qq-modal');
 
     wechatBtn.addEventListener('click', () => {
       wechatModal.classList.add('active');
@@ -127,6 +135,16 @@
     wechatModal.addEventListener('click', (e) => {
       if (e.target === wechatModal) {
         wechatModal.classList.remove('active');
+      }
+    });
+
+    qqBtn.addEventListener('click', () => {
+      qqModal.classList.add('active');
+    });
+
+    qqModal.addEventListener('click', (e) => {
+      if (e.target === qqModal) {
+        qqModal.classList.remove('active');
       }
     });
   </script>
